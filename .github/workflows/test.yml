@@ -20,4 +20,4 @@ jobs:
       - name: Install dependencies
         run: pip install pytest pytest-describe pytest-mock
       - name: Run Unit Tests
-        run: pytest --spec
+        run: pytest 
