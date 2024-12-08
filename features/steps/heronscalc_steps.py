@@ -8,11 +8,10 @@ def get_url(context, url):
     context.behave_driver.get(url)
 
 
-@when('I input "{value}" for side "{side}"')
-def step_input_side(context, value, side):
+@when('I input "{number}" for side "{side}"')
+def step_input_side(context, number, side):
     input_field = context.behave_driver.find_element(By.ID, side)
-    input_field.clear()
-    input_field.send_keys(value)
+    input_field.send_keys(number)
 
 
 
@@ -27,4 +26,4 @@ def step_click_calculate_button(context):
 def step_verify_area(context, expected_area):
     result_field = context.behave_driver.find_element(By.ID, "_d")
     actual_area = result_field.get_attribute("value") 
-    assert actual_area == expected_area, f"Expected area {expected_area}, but got {actual_area}"
+    assert actual_area == expected_area
