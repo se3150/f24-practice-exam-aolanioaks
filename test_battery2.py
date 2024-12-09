@@ -45,7 +45,7 @@ def describe_battery():
         mock_external_monitor = Mock()
 
         #Create a Battery instance with the mock as the external monitor
-        b = Battery(100, external_monitor=mock_external_monitor)
+        b = Battery(70, external_monitor=mock_external_monitor)
 
         #Recharge the battery
         b.recharge(30)
@@ -69,7 +69,7 @@ def describe_battery():
 
 
     def drain_does_not_go_under_zero():
-        b = Battery(100)
+        b = Battery(10)
         assert b.drain(-10) == False
         
 
@@ -80,6 +80,7 @@ def describe_battery():
         b = Battery(100, external_monitor=mock_external_monitor)
 
         b.drain(20)
+
         assert mock_external_monitor.notify_drain(80)
 
 
