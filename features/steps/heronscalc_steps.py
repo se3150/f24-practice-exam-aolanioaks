@@ -15,7 +15,6 @@ def step_input_side(context, number, side):
 
 
 
-
 @when('I click the "Calculate" button')
 def step_click_calculate_button(context):
     calculate_button = context.behave_driver.find_element(By.CLASS_NAME, "clcbtn")
